@@ -13,7 +13,7 @@ function Card() {
     </path>
     </svg>
       </div>
-    </div>
+    </div>git
     <div className="absolute bg-gray-50 -bottom-24 w-56 p-3 flex flex-col gap-1 group-hover:-bottom-0 group-hover:duration-600 duration-500">
       <span className="text-lime-400 font-bold text-xs">Anita</span>
       <span className="text-gray-800 font-bold text-3xl">white</span>
