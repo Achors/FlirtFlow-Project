@@ -2,10 +2,6 @@ import React from 'react'
 
 
 
-
-
-
-
 function Products() {
   return (
         <div>
@@ -13,7 +9,7 @@ function Products() {
             <input type = "number" placeholder='Search'/>
         </div>
         <div>
-            
+
         </div>
 
         </div>
