@@ -70,27 +70,44 @@
 .pr-data{
   background-color: aqua;
   border-radius: 10px;
-  display: block;
-  flex-wrap: wrap;
+  width: 30%;
+  margin: auto;
+  height: 80vh;
+  text-align: center;
 
 }
 .login-pg{
-  height: 40vh;
+  height: 80vh;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
   width: 30%;
+  margin: auto;
   background-color: aqua;
   border-radius: 10px;
+}
+.Htwo{
+  padding: 15px;
 }
 .bt-logs{
   background-color: aquamarine;
   border-radius: 10px;
   width: 100px;
-  justify-content: space-around;
-  margin-top: 20px;
+  margin-right: 14px;
+  height: 20px;
+
+}
+.log-pg{
+  padding-top: 100px;
+}
+.log-jp{
+  margin: 0;
+  left: 0;
 
 }
 .sign-pt{
   border-radius: 10px;
-  width: 200px;
-  padding-bottom: 10px;
+  width: 350px;
+  padding: 5px;
 
 }
