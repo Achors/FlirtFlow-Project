@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-function Products() {
+function UserData() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
@@ -38,4 +38,4 @@ function Products() {
   );
 }
 
-export default Products;
+export default UserData;
