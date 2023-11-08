@@ -1,31 +1,31 @@
 import React from 'react'
-import logo from './logo.svg';
-import '.Components/App.css';
-
-
-
-
+import '../App.css';
 
 
 
 function Home(){
     return(
-        <>
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                    <p>
-                        Edit <code>src/App.js</code> and save to reload.
-                    </p>
-                    <a className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >
-                    Learn React
-                    </a>
+        <div className="back">
+            <header >
+                <navbar className="nav">
+                <div className="nav-dt">
+                    <div className="logo">FlirtFlow</div>
+                    <div className="nav-list">
+                            <div>Home</div>
+                            <div>Products</div>
+                            <div>Login</div>
+                    </div>
+                </div>
+                </navbar>
             </header>
+            <body className="App-body">
+                <div>
+                    <p className='flirt'>Flirt</p>
+                    <button className='crt-act' >Create Account</button>
+                </div>
+            </body>
 
-        </>
+        </div>
     )
 }
 
