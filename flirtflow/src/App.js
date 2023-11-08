@@ -1,8 +1,9 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import RootLayout from "./Layout/RootLayout";
-// import Home from "./Components/Home";
+import Home from "./Components/Home";
 import UserData from "./Components/UserData";
+import AuthPage from "./Components/log"
 
 function App() {
   return (
