@@ -1,7 +1,6 @@
 .back{
-  background: url("./Images/red-hearts-.avif")
+  background: url("./Assets/red-hearts-.avif")
 }
-
 
 .App {
   text-align: center;
@@ -32,7 +31,7 @@
   align-items: left;
   width: 100%;
   height: 40px;
-  gap: 20px;
+  gap: 80px;
   margin: 10px;
   border: 1px solid red;
 
@@ -51,7 +50,7 @@
 }
 .flirt{
   font-size: 25px;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Impact, 'Arial Narrow Bold', sans-serif;
 }
 .crt-act{
   background-color: orangered;
@@ -60,5 +59,38 @@
   height: 30px;
   width: 150px;
 }
+.parent-card{
+  margin: auto;
+  height: 80vh;
+  width: 100%;
+  border: 1px solid red;
+  padding: 20px;
+}
 
+.pr-data{
+  background-color: aqua;
+  border-radius: 10px;
+  display: block;
+  flex-wrap: wrap;
 
+}
+.login-pg{
+  height: 40vh;
+  width: 30%;
+  background-color: aqua;
+  border-radius: 10px;
+}
+.bt-logs{
+  background-color: aquamarine;
+  border-radius: 10px;
+  width: 100px;
+  justify-content: space-around;
+  margin-top: 20px;
+
+}
+.sign-pt{
+  border-radius: 10px;
+  width: 200px;
+  padding-bottom: 10px;
+
+}

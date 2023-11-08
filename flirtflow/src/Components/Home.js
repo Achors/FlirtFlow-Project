@@ -1,6 +1,7 @@
 import React from 'react';
 import '../App.css';
-import {FaReact, FaGithub} from 'react-icons/fa';
+// import AutoType from './flirt';
+
 
 
 
@@ -10,7 +11,7 @@ function Home(){
             <header >
                 <navbar className="nav">
                 <div className="nav-dt">
-                    <div className="logo"><span className='F-logo'>F</span><i class="fa-solid fa-heart"></i>F</div>
+                    <div className="logo"><span className='F-logo'>F</span>F</div>
                     <div className="nav-list">
                             <div>Home</div>
                             <div>Products</div>
@@ -22,6 +23,7 @@ function Home(){
             <body className="App-body">
                 <div>
                     <p className='flirt'>Flirt</p>
+                    {/* <p className='flirt'><AutoType text="Flirt" delay={100} /></p> */}
                     <button className='crt-act' >Create Account</button>
                 </div>
             </body>
