@@ -1,19 +1,13 @@
 import React from 'react'
+import UserData from './UserData'
 
 
 
-function Products() {
-  return (
-        <div>
-        <div>
-            <input type = "number" placeholder='Search'/>
-        </div>
-        <div>
+function Products (){
+  return(
+    <UserData />
+  );
+};
 
-        </div>
-
-        </div>
-  )
-}
 
 export default Products

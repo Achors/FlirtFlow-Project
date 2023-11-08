@@ -1,9 +1,19 @@
 import React from 'react'
 import '../App.css'
+import { useNavigate } from 'react-router-dom'
 
 
 
 function Login({onSwitchToSignUp}){
+    const navigate = useNavigate();
+
+
+
+    const handleLogin = () => {
+
+
+        navigate("./UserData")
+    };
     return(
         <div className='parent-card'>
                     <div className='login-pg'>
@@ -20,7 +30,7 @@ function Login({onSwitchToSignUp}){
                                 
                             </div>
                             <div className='log-pg'>
-                                <button className='bt-logs'>Login</button>
+                                <button className='bt-logs' onClick={handleLogin}>Login</button>
                                 <button className='bt-logs'onClick={onSwitchToSignUp}>Sign Up</button>
                             </div>
                         </div>                
