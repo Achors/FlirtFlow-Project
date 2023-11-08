@@ -3,8 +3,6 @@ import '../App.css';
 // import AutoType from './flirt';
 
 
-
-
 function Home(){
     return(
         <div className="back">
