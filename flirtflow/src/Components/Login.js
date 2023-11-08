@@ -7,19 +7,19 @@ function Login({onSwitchToSignUp}){
     return(
         <div className='parent-card'>
                     <div className='login-pg'>
-                            <div>
+                            <div className='Htwo'>
                                 <h2>Sign In</h2>
                             </div>
-                            <div>
+                            <div className='log-pg'>
                                 <p>Username:</p> 
-                                <input  className="sign-pt" type='text'/>
+                                <input  placeholder='Enter Your Username' className="sign-pt" type='text'/>
                             </div>
                             <div>
                                 <p>Password:</p> 
-                                <input className="sign-pt" type='password'/>
+                                <input placeholder='Enter Your Password'className="sign-pt" type='password'/>
                                 
                             </div>
-                            <div>
+                            <div className='log-pg'>
                                 <button className='bt-logs'>Login</button>
                                 <button className='bt-logs'onClick={onSwitchToSignUp}>Sign Up</button>
                             </div>
