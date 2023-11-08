@@ -1,6 +1,6 @@
 import React from 'react';
 import '../App.css';
-import AutoType from './flirt';
+// import AutoType from './flirt';
 
 
 
@@ -22,7 +22,8 @@ function Home(){
             </header>
             <body className="App-body">
                 <div>
-                    <p className='flirt'><AutoType text="Flirt" delay={100} /></p>
+                    <p className='flirt'>Flirt</p>
+                    {/* <p className='flirt'><AutoType text="Flirt" delay={100} /></p> */}
                     <button className='crt-act' >Create Account</button>
                 </div>
             </body>

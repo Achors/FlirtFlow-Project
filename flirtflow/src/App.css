@@ -1,7 +1,6 @@
 .back{
-  background: url("./Images/red-hearts-.avif")
+  background: url("./Assets/red-hearts-.avif")
 }
-
 
 .App {
   text-align: center;
@@ -84,5 +83,14 @@
 .bt-logs{
   background-color: aquamarine;
   border-radius: 10px;
+  width: 100px;
+  justify-content: space-around;
+  margin-top: 20px;
+
+}
+.sign-pt{
+  border-radius: 10px;
+  width: 200px;
+  padding-bottom: 10px;
 
 }
