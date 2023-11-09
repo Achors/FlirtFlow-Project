@@ -10,7 +10,7 @@ function Navbar() {
                     <div className="logo"><span className='F-logo'>F</span>F</div>
                     <div className="nav-list">
                             <div>Home</div>
-                            <div>Products</div>
+                            <div>Users</div>
                             <div>Login</div>
                     </div>
                 </div>

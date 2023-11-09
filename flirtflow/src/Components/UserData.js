@@ -13,7 +13,7 @@ function UserData() {
       .then(users => setUsers(users))
       .catch((error) => console.error("Error fetching data:", error));
 
-      }, []); //  empty dependency array to ensure this effect runs once when the component mounts
+      }, []); 
 
   return (
     <div>    
@@ -25,6 +25,7 @@ function UserData() {
             </div>
             <div>
             <input className="search" placeholder="Search" />
+            <Search />
             </div>              
           </div>
           <div className="userCard">
