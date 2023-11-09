@@ -4,6 +4,7 @@ import '../App.css'
 function UserData() {
   const [users, setUsers] = useState([]);
   const [genderFilter, setGenderFilter] = useState("All");
+  const [searchFilter, setSearchFilter] = useState("");
   
 
   useEffect(() => {
@@ -16,6 +17,10 @@ function UserData() {
       
       const filteredData = genderFilter === "All" ? users : users.filter((user) => user.gender === genderFilter);
 
+      const filteredUser = users.filter((user) => user.name.toLowerCase().includes(searchFilter.toLowerCase()));
+
+      const filteredPersons = [...filteredUser, ...filteredData]
+
   return (
     <div>    
         <div className="users">
@@ -27,20 +32,24 @@ function UserData() {
           <div className="card-user">
               <div className='sidebar'>
               <p id="app-name"className='nameed'><span>F</span>lirtFlow</p>
-              <input className="search" placeholder="Search" />
+              <input 
+                className="search" 
+                placeholder="Enter Name" 
+                value={searchFilter}
+                onChange={(e) => setSearchFilter(e.target.value)} />
               <p className='nameed'>Sort by:</p>
               <label>
-              <input name='options' value='All' checked={genderFilter === 'All'}   onChange={() => setGenderFilter("All")} type="radio" />All
+              <input className='rd-btn' name='options' value='All' checked={genderFilter === 'All'}   onChange={() => setGenderFilter("All")} type="radio" />All
               </label>
               <label>
-              <input name='options' value='Male' checked={genderFilter === 'Male'} onChange={() => setGenderFilter("Male")} type="radio" />Male
+              <input className='rd-btn' name='options' value='Male' checked={genderFilter === 'Male'} onChange={() => setGenderFilter("Male")} type="radio" />Male
               </label>
               <label>
-              <input name='options' value='Female' checked={genderFilter === 'Female'}  onChange={() => setGenderFilter("Female")} type="radio" />Female
+              <input className='rd-btn' name='options' value='Female' checked={genderFilter === 'Female'}  onChange={() => setGenderFilter("Female")} type="radio" />Female
               </label>              
               </div>
             <div className="userCard">
-           {filteredData.map((user) => (
+           {filteredPersons.map((user) => (
               <div className='profile' key={user.id}>
               <img src={user.profile_picture} alt={`${user.name}`} />
               <h2><span>{user.name}, {user.age}, {user.gender}</span></h2>

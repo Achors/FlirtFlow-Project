@@ -138,6 +138,7 @@
   width: 400px;
   border: 2px solid black;
   text-align: center;
+  cursor: pointer;
 
 }
 .userCard{
@@ -213,5 +214,12 @@
 .sort{
   margin: 10px;
 }
-
+.rd-btn{
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.rd-btn:hover{
+  transform: scale(1.5);
+  color: white;
+}
 
