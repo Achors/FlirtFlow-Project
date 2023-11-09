@@ -17,9 +17,9 @@ function UserData() {
       
       const filteredData = genderFilter === "All" ? users : users.filter((user) => user.gender === genderFilter);
 
-      const filteredUser = users.filter((user) => user.name.toLowerCase().includes(searchFilter.toLowerCase()));
+      const filteredUser = filteredData.filter((user) => user.name.toLowerCase().includes(searchFilter.toLowerCase()));
 
-      const filteredPersons = [...filteredUser, ...filteredData]
+    
 
   return (
     <div>    
@@ -49,7 +49,8 @@ function UserData() {
               </label>              
               </div>
             <div className="userCard">
-           {filteredPersons.map((user) => (
+
+           {filteredUser.map((user) => (
               <div className='profile' key={user.id}>
               <img src={user.profile_picture} alt={`${user.name}`} />
               <h2><span>{user.name}, {user.age}, {user.gender}</span></h2>
