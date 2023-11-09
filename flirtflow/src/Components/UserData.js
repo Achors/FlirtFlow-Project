@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import '../App.css'
 
 function UserData() {
   const [users, setUsers] = useState([]);
@@ -12,20 +13,22 @@ function UserData() {
       }, []); //  empty dependency array to ensure this effect runs once when the component mounts
 
   return (
-    <div className="userCard">
-      <h1>User Profile</h1>
+    <div className="users">
       <div>
+          <h1>User Profile</h1>
+      </div>
+      <div className="userCard">
         {users.map((user) => (
-          <div key={user.id}>
+          <div className='profile' key={user.id}>
           <img src={user.profile_picture} alt={`${user.name}`} />
-          <h2>{user.name}, {user.age}, {user.gender}</h2>
+          <h2><span>{user.name}, {user.age}, {user.gender}</span></h2>
           <h3>{user.location}, {user.hair_color}</h3> 
             <p>Tel: {user.phone_number}</p>
+            <button className='likes like'>Like</button>
+            <button className='likes dislike'>Dislike</button>            
           </div>
         ))}
       </div>
-      <button>Like</button>
-      <button>Dislike</button>
     </div>
   );
 }
