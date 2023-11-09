@@ -16,7 +16,7 @@ const AutoType = ({word, delay, infinite}) => {
             }, delay);
             return() => clearTimeout(timeout);
         }
-    }, [index, delay,word]);
+    }, [index, delay, word]);
 
 
     return(

@@ -1,6 +1,6 @@
 import React from 'react';
 import '../App.css';
-// import AutoType from './flirt';
+// import AutoType from './Flirt';
 
 
 function Home(){
