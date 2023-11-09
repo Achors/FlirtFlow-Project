@@ -6,7 +6,7 @@ function Search() {
   const [genderFilter, setGenderFilter] = useState("All");
 
   useEffect(() => {
-    fetch("http://localhost:3004/users") 
+    fetch("http://localhost:3000/users") 
       .then((response) => response.json())
       .then((users) => setUser(users));
   }, []);
