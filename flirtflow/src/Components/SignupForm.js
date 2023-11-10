@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-// import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import "../App.css"
 
-function AddUser({onSubmit}) {
-  const [users, setUsers] = useState([]);
+function AddUser({onSubmit, onSwitchToSignIn}) {
   const [formData, setFormData] = useState({
         name: '',
         age: '',
@@ -14,36 +14,45 @@ function AddUser({onSubmit}) {
   });
   function signingUp(e){
     e.preventDefault();
-    onSubmit(formData)
+    const newData = {
+          method: "POST",
+          headers:{
+            "content-type": "application/json"
+          },
+          body:JSON.stringify(formData)
+        }
+        fetch('http://localhost:3004/users', newData)
+        .then(response => response.json())
+        .then(res => console.log(res))
+        .catch((error) => console.error('Error adding user:', error));
+    
   }
 
   function handleInputChange(event) {
-    setFormData({ ...formData, [event.target.name]: event.target.value });
+    setFormData((prevState) => {
+      return {...prevState, [event.target.name]: event.target.value }});
+
   };
+  const navigate = useNavigate();
 
-  function handleSubmission(newUser){
-    setUsers(users => [...users, newUser])
 
-    const newData = {
-      method: "POST",
-      headers:{
-        "content-type": "application/json"
-      },
-      body:JSON.stringify(newUser)
-    }
-    fetch('http://localhost:3004/users', newData)
-    .then(response => response.json())
-    .then(res => setUsers(persons => [...persons, res]) )
-    .catch((error) => console.error('Error adding user:', error));
 
-    
-    }
+  const handlesignUp = () => {
+
+
+      navigate("../users")
+
+  };
 
 
   return (
-    <div>
-      <form onSubmit={signingUp} onChange={handleInputChange}>       
+    <div id='log-jp' className='pr-data'>
+      <form onSubmit={signingUp} >       
         <div className='pg-log'>
+        <div className='Htwo'>
+                        <h2>Create Account</h2>
+                    </div>
+                    <div className='pg-log'>
                             <p className='log-jp'> Username: </p>
                                 <input 
                                 placeholder="Enter your Username" 
@@ -51,8 +60,10 @@ function AddUser({onSubmit}) {
                                 type='text'
                                 name='name'
                                 value={formData.name}
+                                onChange={handleInputChange}
 
                                 />
+                          </div>
                         </div>
                         <div>
                                 <p className='log-jp'> Age: </p>
@@ -61,6 +72,8 @@ function AddUser({onSubmit}) {
                                 className="sign-pt" 
                                 type='number'
                                 name='age'
+                                value={formData.age}
+                                onChange={handleInputChange}
                               
                                 />
                         </div>
@@ -71,6 +84,8 @@ function AddUser({onSubmit}) {
                                 className="sign-pt" 
                                 type='text'
                                 name='location'
+                                value={formData.location}
+                                onChange={handleInputChange}
                               
                                 />
                         </div>
@@ -81,6 +96,8 @@ function AddUser({onSubmit}) {
                                 className="sign-pt" 
                                 type='text'
                                 name='hair_color'
+                                value={formData.hair_color}
+                                onChange={handleInputChange}
                               
                                 />
                         </div> 
@@ -92,6 +109,7 @@ function AddUser({onSubmit}) {
                                 type='text'
                                 name='gender'
                                 value={formData.gender}
+                                onChange={handleInputChange}
                                 />
                         </div> 
                         <div>
@@ -102,19 +120,25 @@ function AddUser({onSubmit}) {
                                 type='number'
                                 name='phone_number'
                                 value={formData.phone_number}
+                                onChange={handleInputChange}
                                 />
                         </div>
-                        <div>       
+                        <div>
+                          <p className='log-jp'>Picture</p>       
                         <input
                                 type="text"
                                 placeholder="Enter the URL of your profile picture"
                                 className="sign-pt"
                                 name="profile_picture"
                                 value={formData.profile_picture}
+                                onChange={handleInputChange}
           
                           />
                        </div>
-                       <button onClick={handleSubmission} className='bt-logs' type='submit'>Sign Up</button>
+                       <div className='log-pg'>
+                       <button onClick={handlesignUp} className='bt-logs' type='submit'>Sign Up</button>
+                       <button className='bt-logs' onClick={onSwitchToSignIn}>Back</button>
+                       </div>
       </form>
     </div>
   );

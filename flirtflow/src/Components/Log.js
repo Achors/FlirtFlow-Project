@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Login from './Login';
 import Signup from './Signup';
+import AddUser from './SignupForm'
 
 class AuthPage extends Component {
   constructor() {
@@ -22,7 +23,7 @@ class AuthPage extends Component {
             {this.state.isLogin ? (
                 <Login onSwitchToSignUp={this.toggleForm} />
                 ) : (
-                <Signup onSwitchToSignIn={this.toggleForm} />
+                <AddUser onSwitchToSignIn={this.toggleForm} />
                 )}
         </div>
     );

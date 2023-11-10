@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../App.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faTrashCan,  faSearch , faMessage} from '@fortawesome/free-solid-svg-icons';
+import LikeButton from './Likes'
 
 
 function UserData() {
@@ -61,7 +62,7 @@ function UserData() {
               <input className='rd-btn' name='options' value='Female' checked={genderFilter === 'Female'}  onChange={() => setGenderFilter("Female")} type="radio" />Female
               </label>              
               </div>
-            <div className="userCard">
+            <div className="userCard">           
 
            {filteredUser.map((user) => (
               <div className='profile' key={user.id}>
@@ -70,7 +71,7 @@ function UserData() {
               <h3>{user.location}, {user.hair_color}</h3> 
                 <p>Tel: {user.phone_number}</p>
                 <div className='iconitis'>
-                <div ><FontAwesomeIcon  icon={faHeart} size="2x" color="#F000000"/></div>
+                <div><LikeButton /></div>
                 <div ><FontAwesomeIcon  icon={faMessage} size="2x" color="#000000"/></div>
                 <div ><FontAwesomeIcon  icon={faTrashCan} size="2x" color="#000000"/></div>
                 </div>                      
