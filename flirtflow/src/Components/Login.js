@@ -12,7 +12,7 @@ function Login({onSwitchToSignUp}){
     const handleLogin = () => {
 
 
-        navigate("users")
+        navigate("../users")
     };
     return(
         <div className='parent-card'>

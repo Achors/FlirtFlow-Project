@@ -5,7 +5,7 @@ function Navbar() {
   return (
     <div> 
          <header >
-                <navbar className="nav">
+                <div className="nav">
                 <div className="nav-dt">
                     <div className="logo"><span className='F-logo'>F</span>F</div>
                     <div className="nav-list">
@@ -14,7 +14,7 @@ function Navbar() {
                             <div>Login</div>
                     </div>
                 </div>
-                </navbar>
+                </div>
             </header>
     </div>
   )

@@ -7,7 +7,7 @@ import AuthPage from "./Components/Log";
 
 function App() {
   return (
-    <div>
+    <div >
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<RootLayout />}>
