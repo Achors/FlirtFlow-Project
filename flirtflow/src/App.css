@@ -60,6 +60,10 @@
   border-radius: 10px;
   height: 30px;
   width: 150px;
+  transition: transform 0.2s ease-in-out;
+}
+.crt-act:hover{
+  transform: translateY(-5px);
 }
 .parent-card{
   margin: auto;
@@ -70,7 +74,7 @@
 }
 
 .pr-data{
-  background-color: rgb(220, 156, 156);
+  background-color: rgb(230, 228, 228);
   border-radius: 10px;
   width: 30%;
   margin: auto;
@@ -86,7 +90,7 @@
   justify-content: center;
   width: 30%;
   margin: auto;
-  background-color: rgb(220, 156, 156);
+  background-color: rgb(230, 228, 228);
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -107,12 +111,15 @@
 .log-jp{
   margin: 0;
   left: 0;
+  font-size: 20px;
 
 }
 .sign-pt{
   border-radius: 10px;
   width: 350px;
   padding: 5px;
+  height: 20px;
+  font-size: 15px;
 
 }
 .users{
