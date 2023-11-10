@@ -33,8 +33,8 @@ function Signup({onSwitchToSignIn}) {
                                 <input placeholder="Enter your Phone number" className="sign-pt" type='number'/>
                         </div>
                         <div>       
-                                <p className='log-jp'> Picture: </p>
-                                <input type='file' alt="image"/>
+                                <p className='log-jp'> Picture URL: </p>
+                                <input type='text' className="sign-pt" placeholder='Enter Image URL' alt="image"/>
                         </div>
                         <div className='log-pg'>
                             <button className='bt-logs' type='submit'>Sign Up</button>

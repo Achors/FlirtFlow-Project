@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import '../App.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart, faTrashCan,  faSearch , faMessage} from '@fortawesome/free-solid-svg-icons';
+
 
 function UserData() {
   const [users, setUsers] = useState([]);
@@ -19,6 +22,9 @@ function UserData() {
 
       const filteredUser = filteredData.filter((user) => user.name.toLowerCase().includes(searchFilter.toLowerCase()));
 
+
+      
+
     
 
   return (
@@ -32,11 +38,18 @@ function UserData() {
           <div className="card-user">
               <div className='sidebar'>
               <p id="app-name"className='nameed'><span>F</span>lirtFlow</p>
+              <div className='search-bar'>
+              <div>
               <input 
                 className="search" 
                 placeholder="Enter Name" 
                 value={searchFilter}
                 onChange={(e) => setSearchFilter(e.target.value)} />
+                </div>
+                <div className='searc con'>
+                <FontAwesomeIcon  icon={faSearch} size="2x" color="#000000"/>
+                </div>
+                </div>
               <p className='nameed'>Sort by:</p>
               <label>
               <input className='rd-btn' name='options' value='All' checked={genderFilter === 'All'}   onChange={() => setGenderFilter("All")} type="radio" />All
@@ -56,8 +69,11 @@ function UserData() {
               <h2><span>{user.name}, {user.age}, {user.gender}</span></h2>
               <h3>{user.location}, {user.hair_color}</h3> 
                 <p>Tel: {user.phone_number}</p>
-                <button className='likes like'>Like</button>
-                <button className='likes dislike'>Dislike</button>            
+                <div className='iconitis'>
+                <div ><FontAwesomeIcon  icon={faHeart} size="2x" color="#F000000"/></div>
+                <div ><FontAwesomeIcon  icon={faMessage} size="2x" color="#000000"/></div>
+                <div ><FontAwesomeIcon  icon={faTrashCan} size="2x" color="#000000"/></div>
+                </div>                      
               </div>
             ))} 
             </div>

@@ -192,7 +192,13 @@
 .profile:hover{
   transform: scale(1.05);
 }
-.likes{
+.iconitis{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 20px;
+}
+/* .likes{
   height: 25px;
   width: 70px;
   margin: 10px;
@@ -206,23 +212,36 @@
   cursor: pointer;
 }
 .like{
-  background-color: red;
+  background-color:transparent;
 
-}
+} */
 .dislike{
   background-color: greenyellow;
 }
 
 .search{
-  width:380px;
-  height: 20px;
-  background-color: rgb(31, 31, 31);
+  width:138%;
+  height: 3vh;
+  background-color: black;
   border-radius: 30px;
-  margin: 5px;
-  padding: 7px;
+  padding: 4px;
   color: white;
   font-size: 20px;
+  border: none;
+  /* flex: 1; */
 
+}
+.search-bar{
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  background-color: transparent;
+  width: 99%;
+  border: 1px solid rgb(131, 130, 130);
+  color: #2c2e33;
+  height: 3.6vh;
+  margin-top: 8px;
+  border-radius: 30px;
 }
 .nameed{
   font-size: 20px;
