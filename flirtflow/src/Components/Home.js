@@ -1,16 +1,33 @@
 import React from 'react';
 import '../App.css';
-// import AutoType from './flirt';
+import AutoType from './Flirt';
+import { useNavigate } from 'react-router-dom'
 
 
 function Home(){
+
+    const navigate = useNavigate();
+
+
+
+    const handleLogin = () => {
+
+
+        navigate("../users")
+
+    };
     return(
-        <div className="back">
+        <div className='back'>
             <body className="App-body">
                 <div>
-                    <p className='flirt'>Flirt</p>
-                    {/* <p className='flirt'><AutoType text="Flirt" delay={100} /></p> */}
-                    <button className='crt-act' >Create Account</button>
+                    <p>FlirtFlow</p>
+                </div>
+                <div>
+                    <p className='flirt'>S<AutoType word="pot Your Date" delay={400} infinite={true} /></p>
+                    
+                </div>
+                <div>
+                <button className='crt-act' onClick={handleLogin}>Get Started</button>
                 </div>
             </body>
 
