@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import '../App.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart, faTrashCan,  faSearch , faMessage} from '@fortawesome/free-solid-svg-icons';
-import LikeButton from './Likes'
+import { faTrashCan,  faSearch , faMessage} from '@fortawesome/free-solid-svg-icons';
+import LikeButton from './Likes';
+import CommentList from './Message';
 
 
 function UserData() {
   const [users, setUsers] = useState([]);
   const [genderFilter, setGenderFilter] = useState("All");
   const [searchFilter, setSearchFilter] = useState("");
+  const [selectedUserId, setSelectedUserId] = useState(null);
   
 
   useEffect(() => {
@@ -18,6 +20,15 @@ function UserData() {
       .catch((error) => console.error("Error fetching data:", error));
 
       }, []);
+
+      const handleCommentClick = (userId) => {
+        setSelectedUserId(userId);
+      };
+    
+      const handleCommentSubmit = (commentText) => {
+        console.log(`User ${selectedUserId} submitted a comment: ${commentText}`);
+        setSelectedUserId(null);
+      };
       
       const filteredData = genderFilter === "All" ? users : users.filter((user) => user.gender === genderFilter);
 
@@ -72,9 +83,11 @@ function UserData() {
                 <p>Tel: {user.phone_number}</p>
                 <div className='iconitis'>
                 <div><LikeButton /></div>
-                <div ><FontAwesomeIcon  icon={faMessage} size="2x" color="#000000"/></div>
+                <div ><FontAwesomeIcon onClick={() => handleCommentClick(user.id)} icon={faMessage} size="2x" color="#000000"/></div>
                 <div ><FontAwesomeIcon  icon={faTrashCan} size="2x" color="#000000"/></div>
-                </div>                      
+                </div>
+                {selectedUserId === user.id && (<CommentList userId={user.id} onSubmit={handleCommentSubmit}/>)}
+
               </div>
             ))} 
             </div>
