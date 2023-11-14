@@ -12,7 +12,7 @@ function UserData() {
   
 
   useEffect(() => {
-    fetch("http://localhost:3004/users")
+    fetch("http://localhost:3000/users")
       .then((r) => r.json())
       .then(users => setUsers(users))
       .catch((error) => console.error("Error fetching data:", error));
