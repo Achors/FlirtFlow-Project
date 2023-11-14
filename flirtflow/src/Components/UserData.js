@@ -10,6 +10,7 @@ function UserData() {
   const [users, setUsers] = useState([]);
   const [genderFilter, setGenderFilter] = useState("All");
   const [searchFilter, setSearchFilter] = useState("");
+  const [ageFilter, setAgeFilter] = useState("");
   const [selectedUserId, setSelectedUserId] = useState(null);
   
 
@@ -29,6 +30,25 @@ function UserData() {
         console.log(`User ${selectedUserId} submitted a comment: ${commentText}`);
         setSelectedUserId(null);
       };
+
+
+
+      useEffect(()=>{
+        if(ageFilter){
+          const flirtUsers = users.filter((user) => {
+            if(user.age === parseInt(ageFilter, 10)) {
+              return true;
+            } else if(ageFilter.includes('-')){
+              const[minAge, maxAge] = ageFilter.split('-').map((num) => parseInt(num, 10));
+              return user.age >= minAge && user.age <= maxAge;
+            }
+            return false;
+          });
+          setAgeFilter(flirtUsers);
+        }else {
+          setAgeFilter(filteredUser)
+        }
+      }, [ageFilter, filteredUser]);
       
       const filteredData = genderFilter === "All" ? users : users.filter((user) => user.gender === genderFilter);
 
@@ -54,9 +74,10 @@ function UserData() {
               <div>
               <input 
                 className="search" 
-                placeholder="Enter Name" 
+                placeholder="Search by age or Name" 
                 value={searchFilter}
-                onChange={(e) => setSearchFilter(e.target.value)} />
+                onChange={(e) => setSearchFilter(e.target.value)}
+                onChange={(e) => setAgeFilter(e.target.value)} />
                 </div>
                 <div className='searc con'>
                 <FontAwesomeIcon  icon={faSearch} size="2x" color="#000000"/>
