@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
 function LikeButton() {
   const [likes, setLikes] = useState(0);
@@ -19,8 +19,7 @@ function LikeButton() {
   return (
     <div>
       <button onClick={handleLike}>
-        <FontAwesomeIcon icon={faHeart} color={isLiked ? 'red' : 'black'} />
-
+        <FontAwesomeIcon icon={faHeart} color={isLiked ? "red" : "black"} />
       </button>
       <span>{likes}</span>
     </div>

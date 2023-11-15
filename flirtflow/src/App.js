@@ -1,20 +1,21 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import RootLayout from "./Layout/RootLayout";
+import Login from "./Components/Login";
+import UserData from "./Components/UserData";
 import Home from "./Components/Home";
-import Products from "./Components/Products";
-import AuthPage from "./Components/Log";
+import AuthPage from "./Components/AuthPage";
 
 function App() {
   return (
-    <div >
+    <div>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<RootLayout />}>
-            <Route path="/Home" element={<Home />} />
-            <Route path= "/Users" element= {<Products />} />
-            <Route path="/login" element={<AuthPage />} />
-                       
+            <Route path="/" element={<Home />} />
+            <Route path="/users" element={<UserData />} />
+            <Route path="/auth" element={<AuthPage />} />
+            <Route path="/login" element={<Login />} />
           </Route>
         </Routes>
       </BrowserRouter>

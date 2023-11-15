@@ -299,36 +299,6 @@
       "phone_number": "+1 (890) 123-5678",
       "hair_color": "Brunette",
       "profile_picture": "https://media.istockphoto.com/id/1434454455/photo/beautiful-seductive-brunette-woman-on-dark-background-shiny-brown-healthy-hair-waving-on-wind.jpg?s=612x612&w=0&k=20&c=XI7O3wgZDAJJ3WbeprgQYu2GCj5g1n-UTBIT5BNSXdE="
-    },
-    {
-      "name": "Adolf",
-      "age": "34",
-      "location": "Madrid",
-      "hair_color": "black",
-      "gender": "Male",
-      "phone_number": "098876543",
-      "profile_picture": "http://localhost:3000/login",
-      "id": 31
-    },
-    {
-      "name": "Adolf",
-      "age": "34",
-      "location": "Madrid",
-      "hair_color": "black",
-      "gender": "Male",
-      "phone_number": "098876543",
-      "profile_picture": "http://localhost:3000/login",
-      "id": 32
-    },
-    {
-      "name": "Nyerere",
-      "age": "23",
-      "location": "Madrid",
-      "hair_color": "black",
-      "gender": "Male",
-      "phone_number": "9887663",
-      "profile_picture": "https://media.istockphoto.com/id/839214266/photo/intense-portrait-of-a-man-with-beard.jpg?s=2048x2048&w=is&k=20&c=3twXsPceNEFE0y3icBp508CsugcOlJaY_4jv6o5RyG0=",
-      "id": 33
     }
   ]
 }
